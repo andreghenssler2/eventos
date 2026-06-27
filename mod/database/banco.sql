@@ -50,74 +50,21 @@ CREATE TABLE participantes (
     comunidade VARCHAR(150),
     FOREIGN KEY(usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+CREATE TABLE logs_login(
 
-CREATE TABLE eventos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    titulo VARCHAR(200),
-    descricao TEXT,
-    banner VARCHAR(255),
-    inicio DATETIME,
-    fim DATETIME,
-    local VARCHAR(200),
-    cidade VARCHAR(100),
-    estado CHAR(2),
-    valor DECIMAL(10, 2),
-    vagas INT,
-    inscricao_inicio DATETIME,
-    inscricao_fim DATETIME,
-    certificado BOOLEAN DEFAULT FALSE,
-    ativo BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
-CREATE TABLE campos_evento (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    evento_id INT,
-    nome VARCHAR(100),
-    label VARCHAR(150),
-    tipo VARCHAR(30),
-    placeholder VARCHAR(150),
-    obrigatorio BOOLEAN,
-    ordem INT,
-    largura INT,
-    opcoes TEXT,
-    FOREIGN KEY(evento_id) REFERENCES eventos(id) ON DELETE CASCADE
-);
+    usuario_id INT,
 
-CREATE TABLE inscricoes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    evento_id INT,
-    participante_id INT,
-    status ENUM(
-        'PENDENTE',
-        'CONFIRMADO',
-        'PRESENTE',
-        'CANCELADO'
-    ),
-    valor DECIMAL(10, 2),
-    forma_pagamento VARCHAR(30),
+    ip VARCHAR(45),
+
+    navegador VARCHAR(255),
+
+    sucesso TINYINT(1),
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY(evento_id) REFERENCES eventos(id),
-    FOREIGN KEY(participante_id) REFERENCES participantes(id)
-);
 
-CREATE TABLE respostas (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    inscricao_id INT,
-    campo_id INT,
-    valor TEXT,
-    FOREIGN KEY(inscricao_id) REFERENCES inscricoes(id),
-    FOREIGN KEY(campo_id) REFERENCES campos_evento(id)
-);
+    FOREIGN KEY(usuario_id)
+        REFERENCES usuarios(id)
 
-CREATE TABLE certificados (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    evento_id INT,
-    participante_id INT,
-    codigo VARCHAR(100),
-    arquivo VARCHAR(255),
-    emitido BOOLEAN DEFAULT FALSE,
-    data_emissao DATETIME,
-    FOREIGN KEY(evento_id) REFERENCES eventos(id),
-    FOREIGN KEY(participante_id) REFERENCES participantes(id)
 );
