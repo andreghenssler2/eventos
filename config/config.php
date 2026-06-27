@@ -12,3 +12,5 @@ define('APP_URL', 'http://localhost');
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/../mod/Helper.php';
 require_once __DIR__ . '/../lib/vendor/autoload.php';
+
+require_once __DIR__.'/../mod/event/Evento.php';

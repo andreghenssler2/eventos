@@ -2,6 +2,10 @@
 
 require_once 'config/config.php';
 
+$evento = new Evento();
+
+$eventos = $evento->listarDestaques();
+
 include 'resources/layouts/header.php';
 include 'resources/layouts/navbar.php';
 ?>

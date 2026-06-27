@@ -16,7 +16,7 @@ class Database
             try {
 
                 self::$instance = new PDO(
-                    "mysql:host=$host;dbname=$db;charset=utf8mb4",
+                    "mysql:host=localhost;dbname=$db;charset=utf8mb4",
                     $user,
                     $pass
                 );
