@@ -3,7 +3,7 @@
 require_once '../config/config.php';
 require_once '../mod/auth/Auth.php';
 require_once '../mod/auth/Session.php';
-// require_once 'mod/auth/Middleware.php';
+require_once '../mod/auth/Middleware.php';
 
 Middleware::guest();
 
