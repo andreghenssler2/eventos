@@ -52,7 +52,7 @@ $user = Auth::user();
 
                 <li>
 
-                    <a class="dropdown-item text-danger" href="/logout.php">
+                    <a class="dropdown-item text-danger" href="/login/logout.php">
 
                         Sair
 

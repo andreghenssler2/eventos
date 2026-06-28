@@ -40,7 +40,7 @@ $usuario = Auth::user();
 
                 <?= htmlspecialchars($usuario['nome']) ?>
 
-                <a href="../logout.php" class="btn btn-danger btn-sm ms-3">
+                <a href="/login/logout.php" class="btn btn-danger btn-sm ms-3">
 
                     Sair
 
