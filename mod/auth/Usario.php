@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../config/database.php';
+// require_once __DIR__ . '/../config/database.php';
 
 class Usuario
 {
@@ -95,7 +95,7 @@ class Usuario
         $sql->bindValue(':nome', $dados['nome']);
         $sql->bindValue(':email', strtolower(trim($dados['email'])));
         $sql->bindValue(':senha', password_hash($dados['senha'], PASSWORD_DEFAULT));
-        $sql->bindValue(':tipo', $dados['tipo'] ?? 'PARTICIPANTE');
+        $sql->bindValue(':tipo', $dados['tipo'] ?? '3');
         $sql->bindValue(':ativo', $dados['ativo'] ?? 1);
 
         $sql->execute();

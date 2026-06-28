@@ -153,7 +153,7 @@ class Auth
      */
     public static function isAdmin(): bool
     {
-        return self::tipo() === 'ADMIN';
+        return self::tipo() === '1';
     }
 
     /**
@@ -161,7 +161,7 @@ class Auth
      */
     public static function isModerador(): bool
     {
-        return self::tipo() === 'MODERADOR';
+        return self::tipo() === '2';
     }
 
     /**
@@ -169,7 +169,7 @@ class Auth
      */
     public static function isParticipante(): bool
     {
-        return self::tipo() === 'PARTICIPANTE';
+        return self::tipo() === '3';
     }
 
     /**
@@ -221,15 +221,15 @@ class Auth
 
         switch (self::tipo()) {
 
-            case 'ADMIN':
+            case '1':
                 header("Location: /admin/dashboard.php");
                 break;
 
-            case 'MODERADOR':
+            case '2':
                 header("Location: /admin/dashboard.php");
                 break;
 
-            case 'PARTICIPANTE':
+            case '3':
                 header("Location: /participante/dashboard.php");
                 break;
 

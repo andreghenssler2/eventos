@@ -34,13 +34,13 @@
 
             <div class="d-flex">
 
-                <a href="login.php" class="btn btn-outline-light me-2">
+                <a href="login" class="btn btn-outline-light me-2">
 
                     Entrar
 
                 </a>
 
-                <a href="cadastro.php" class="btn btn-light">
+                <a href="login/cadastro.php" class="btn btn-light">
 
                     Cadastrar
 

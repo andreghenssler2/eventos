@@ -10,6 +10,7 @@ Middleware::admin();
 $usuario = Auth::user();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
